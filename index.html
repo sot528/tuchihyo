@@ -2,6 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>jsQR Demo</title>
+  <script src="./node_modules/jsqr/dist/jsQR.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
   <style>
     body {
@@ -62,8 +63,6 @@
   <div hidden><b>Data:</b> <span id="outputData"></span></div>
 </div>
 <script>
-  import jsQR from "jsqr";
-
   var video = document.createElement("video");
   var canvasElement = document.getElementById("canvas");
   var canvas = canvasElement.getContext("2d");
