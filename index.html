@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<h1>サンプル</h1>
+
+<video id="video" width="300" height="200" autoplay="1" ></video>
+<img id="img">
+<div style="display:none">
+  <canvas id="canvas"></canvas>
+</div>
+<input type="button" id="action" value="decode"/>
+
+<script type="text/javascript">
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || window.navigator.mozGetUserMedia;
+  window.URL = window.URL || window.webkitURL;
+
+  var video = document.getElementById('myVideo');
+  var localStream = null;
+  navigator.getUserMedia({video: true, audio: false},
+      function(stream) {
+        video.src = window.URL.createObjectURL(stream);
+        localStream = stream;
+      },
+      function(err) {
+      }
+  );
+
+  function decodeImageFromBase64(data, callback){
+    qrcode.callback = callback;
+    qrcode.decode(data)
+  }
+
+  document.getElementById("action").addEventListener('click',function(){
+    if(localStream) {
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+      var img = document.getElementById('img');
+
+      var w = video.offsetWidth;
+      var h = video.offsetHeight;
+
+      canvas.setAttribute("width", w);
+      canvas.setAttribute("height", h);
+
+      //canvasにコピー
+      ctx.drawImage(video, 0, 0, w, h);
+
+      // デコード.
+      decodeImageFromBase64(canvas.toDataURL('image/png'), function(decodedInformation){
+        alert(decodedInformation);
+      });
+    }
+  },false);
+</script>
+
+</body>
+</html>
