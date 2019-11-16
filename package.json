@@ -1,0 +1,16 @@
+{
+  "name": "tuchihyo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sot528/tuchihyo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsqr": "^1.2.0"
+  }
+}
