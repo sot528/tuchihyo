@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "scripts": {},
+  "scripts": {
+    "start": "npx parcel index.html --open",
+    "build": "npx parcel build index.html"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sot528/tuchihyo.git"
@@ -12,5 +15,11 @@
   "license": "ISC",
   "dependencies": {
     "jsqr": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "parcel": "^1.12.4"
   }
 }
