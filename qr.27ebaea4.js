@@ -10168,6 +10168,7 @@ var _jsQR = _interopRequireDefault(require("./node_modules/jsqr/dist/jsQR.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var loaded = false;
 var video = document.createElement("video");
 var canvasElement = document.getElementById("canvas");
 var canvas = canvasElement.getContext("2d");
@@ -10215,17 +10216,26 @@ function tick() {
     });
 
     if (code) {
-      // 成功時
+      // 1度しか読み込まない
+      if (loaded) {
+        return;
+      } else {
+        loaded = true;
+      } // 成功時
+
+
       drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
       drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
-      outputMessage.hidden = true;
-      outputData.parentElement.hidden = false;
-      outputData.innerText = code.data;
-      canvas.hidden = true;
-      badgesContainer.hidden = false;
-      $('#badgesContainer').hide().fadeIn('slow');
+      outputMessage.hidden = true; // outputData.parentElement.hidden = false;
+      // outputData.innerText = code.data;
+
+      $('#outputMessage').fadeOut('slow');
+      $('#cameraContainer').fadeOut('slow', function () {
+        $('#badgesContainer').hide().fadeIn('slow');
+        badgesContainer.hidden = false;
+      });
     } else {
       // outputMessage.hidden = false;
       outputData.parentElement.hidden = true;
@@ -10262,7 +10272,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52987" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55733" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
