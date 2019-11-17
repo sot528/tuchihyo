@@ -2,6 +2,8 @@
 <head>
   <meta charset="utf-8">
   <title>通知表(仮)</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="./qr.js" defer></script>
   <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -57,9 +59,6 @@
       justify-content: space-around;
     }
 
-
-    .badges .col-4 {
-    }
   </style>
 </head>
 <body>
@@ -72,7 +71,7 @@
 <div id=output>
   <div id="outputMessage">QRコードをカメラに映してください.</div>
   <div hidden><b>Data:</b> <span id="outputData"></span></div>
-  <div id="badges-container" class="container" hidden>
+  <div id="badgesContainer" class="container badges-container" hidden>
     <div class="row badges">
       <div class="col-4">
         <img src="img/badge.png">

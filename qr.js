@@ -7,7 +7,7 @@ var loadingMessage = document.getElementById("loadingMessage");
 var outputContainer = document.getElementById("output");
 var outputMessage = document.getElementById("outputMessage");
 var outputData = document.getElementById("outputData");
-var badgesContainer = document.getElementById("badges-container");
+var badgesContainer = document.getElementById("badgesContainer");
 
 function drawLine(begin, end, color) {
   canvas.beginPath();
@@ -53,9 +53,11 @@ function tick() {
 
       canvas.hidden = true;
       badgesContainer.hidden = false;
+      $('#badgesContainer').hide().fadeIn('slow')
+
 
     } else {
-      outputMessage.hidden = false;
+      // outputMessage.hidden = false;
       outputData.parentElement.hidden = true;
     }
   }
