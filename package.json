@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "npx parcel index.html --open",
-    "build": "npx parcel build index.html --public-url ./"
+    "build": "npx parcel build index.html --public-url ./tuchihyo",
+    "publish": "git subtree push --prefix dist/ . gh-pages && git push origin gh-pages:gh-pages",
+    "bp": "npm run build && npm run publish"
   },
   "repository": {
     "type": "git",
