@@ -59,6 +59,17 @@
       justify-content: space-around;
     }
 
+    .logo {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px 0;
+    }
+
+    .logo img{
+      width: 384px;
+      height: 108px;
+    }
+
     .badges .col-badge img{
       height: 160px;
       width: 160px;
@@ -67,14 +78,13 @@
   </style>
 </head>
 <body>
-<h1>逆通知表</h1>
-<a id="githubLink" href="https://github.com/sot528/tuchihyo">code</a>
-<p>教育課題解決に向けた学習データハッカソン</p>
+<div class="logo">
+  <img src="img/logo.png">
+</div>
 <div id="loadingMessage">エラー発生: なにかおかしいので動きませんね..🙏</div>
 <div id="cameraContainer">
   <canvas id="canvas" hidden></canvas>
 </div>
-<!--<div id="output" hidden>-->
 <div id=output>
   <div id="outputMessage">QRコードをカメラに映してください.</div>
   <div hidden><b>Data:</b> <span id="outputData"></span></div>
