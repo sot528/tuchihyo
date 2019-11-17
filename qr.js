@@ -1,5 +1,6 @@
 import jsQR from "./node_modules/jsqr/dist/jsQR.js";
 
+var loaded = false;
 var video = document.createElement("video");
 var canvasElement = document.getElementById("canvas");
 var canvas = canvasElement.getContext("2d");
@@ -42,18 +43,29 @@ function tick() {
     });
 
     if (code) {
+
+      // 1度しか読み込まない
+      if (loaded) {
+        return;
+      } else {
+        loaded = true;
+      }
+
       // 成功時
       drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
       drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
       drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
       outputMessage.hidden = true;
-      outputData.parentElement.hidden = false;
-      outputData.innerText = code.data;
+      // outputData.parentElement.hidden = false;
+      // outputData.innerText = code.data;
 
-      canvas.hidden = true;
-      badgesContainer.hidden = false;
-      $('#badgesContainer').hide().fadeIn('slow')
+      $('#outputMessage').fadeOut('slow');
+      $('#cameraContainer').fadeOut('slow', function(){
+        $('#badgesContainer').hide().fadeIn('slow');
+        badgesContainer.hidden = false;
+      });
+
 
 
     } else {
