@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>通知表(仮)</title>
+  <title>逆通知表</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="./qr.js" defer></script>
@@ -40,7 +40,7 @@
 
     #output {
       margin-top: 20px;
-      background: #eee;
+      background: white;
       padding: 10px;
       padding-bottom: 0;
     }
@@ -59,10 +59,15 @@
       justify-content: space-around;
     }
 
+    .badges .col-badge img{
+      height: 160px;
+      width: 160px;
+    }
+
   </style>
 </head>
 <body>
-<h1>通知表(仮)</h1>
+<h1>逆通知表</h1>
 <a id="githubLink" href="https://github.com/sot528/tuchihyo">code</a>
 <p>教育課題解決に向けた学習データハッカソン</p>
 <div id="loadingMessage">エラー発生: なにかおかしいので動きませんね..🙏</div>
@@ -75,24 +80,24 @@
   <div hidden><b>Data:</b> <span id="outputData"></span></div>
   <div id="badgesContainer" class="container badges-container" hidden>
     <div class="row badges">
-      <div class="col-4">
-        <img src="img/badge.png">
+      <div class="col-4 col-badge">
+        <img src="img/kigyo.png">
       </div>
-      <div class="col-4">
-        <img src="img/badge.png">
+      <div class="col-4 col-badge">
+        <img src="img/teniss2017.png">
       </div>
-      <div class="col-4">
-        <img src="img/badge.png">
+      <div class="col-4 col-badge">
+        <img src="img/teniss2018.png">
       </div>
     </div>
     <div class="row badges">
-      <div class="col-4">
-        <img src="img/badge.png">
+      <div class="col-4 col-badge">
+        <img src="img/kaikin.png">
       </div>
-      <div class="col-4">
-        <img src="img/badge.png">
+      <div class="col-4 col-badge">
+        <img src="img/iiyatsu.png">
       </div>
-      <div class="col-4">
+      <div class="col-4 col-badge">
         <img src="img/badge.png">
       </div>
     </div>
