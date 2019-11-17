@@ -1,11 +1,104 @@
-<html><head><meta charset="utf-8"><title>通知表(仮)</title><script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script><script src="qr.ee700dcc.js" defer></script><link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><style>body{font-family:Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,メイリオ,Meiryo,ＭＳ Ｐゴシック,sans-serif;color:#333;max-width:640px;margin:0 auto;position:relative}#githubLink{position:absolute;right:0;top:12px;color:#2d99ff}h1{margin:10px 0;font-size:40px}#loadingMessage{text-align:center;padding:40px;background-color:#eee}#canvas{width:100%}#output{margin-top:20px;background:#eee;padding:10px 10px 0}#output div{padding-bottom:10px;word-wrap:break-word}#noQRFound{text-align:center}.badges{display:flex;justify-content:space-around}</style></head><body>
-<h1>通知表(仮)</h1>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>逆通知表</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <script src="/qr.27ebaea4.js" defer=""></script>
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>body {
+      font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+      color: #333;
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    #githubLink {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      color: #2D99FF;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 40px;
+    }
+
+    #loadingMessage {
+      text-align: center;
+      padding: 40px;
+      background-color: #eee;
+    }
+
+    #canvas {
+      width: 100%;
+    }
+
+    #output {
+      margin-top: 20px;
+      background: white;
+      padding: 10px;
+      padding-bottom: 0;
+    }
+
+    #output div {
+      padding-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    #noQRFound {
+      text-align: center;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .badges .col-badge img{
+      height: 160px;
+      width: 160px;
+    }</style>
+</head>
+<body>
+<h1>逆通知表</h1>
 <a id="githubLink" href="https://github.com/sot528/tuchihyo">code</a>
 <p>教育課題解決に向けた学習データハッカソン</p>
 <div id="loadingMessage">エラー発生: なにかおかしいので動きませんね..🙏</div>
-<div id="cameraContainer"> <canvas id="canvas" hidden></canvas>
+<div id="cameraContainer">
+  <canvas id="canvas" hidden=""></canvas>
 </div>
-
-<div id="output"> <div id="outputMessage">QRコードをカメラに映してください.</div> <div hidden><b>Data:</b> <span id="outputData"></span></div> <div id="badgesContainer" class="container badges-container" hidden> <div class="row badges"> <div class="col-4"> <img src="badge.fa7fd38f.png"> </div> <div class="col-4"> <img src="badge.fa7fd38f.png"> </div> <div class="col-4"> <img src="badge.fa7fd38f.png"> </div> </div> <div class="row badges"> <div class="col-4"> <img src="badge.fa7fd38f.png"> </div> <div class="col-4"> <img src="badge.fa7fd38f.png"> </div> <div class="col-4"> <img src="badge.fa7fd38f.png"> </div> </div> </div>
+<!--<div id="output" hidden>-->
+<div id="output">
+  <div id="outputMessage">QRコードをカメラに映してください.</div>
+  <div hidden=""><b>Data:</b> <span id="outputData"></span></div>
+  <div id="badgesContainer" class="container badges-container" hidden="">
+    <div class="row badges">
+      <div class="col-4 col-badge">
+        <img src="/kigyo.57ff1a99.png">
+      </div>
+      <div class="col-4 col-badge">
+        <img src="/teniss2017.b2c9d953.png">
+      </div>
+      <div class="col-4 col-badge">
+        <img src="/teniss2018.cc84a4ef.png">
+      </div>
+    </div>
+    <div class="row badges">
+      <div class="col-4 col-badge">
+        <img src="/kaikin.da4692d0.png">
+      </div>
+      <div class="col-4 col-badge">
+        <img src="/iiyatsu.55e75af2.png">
+      </div>
+      <div class="col-4 col-badge">
+        <img src="/badge.12de77dc.png">
+      </div>
+    </div>
+  </div>
 </div>
-</body></html>
+</body>
+</html>
