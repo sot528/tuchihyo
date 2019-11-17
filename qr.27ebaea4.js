@@ -10175,6 +10175,7 @@ var loadingMessage = document.getElementById("loadingMessage");
 var outputContainer = document.getElementById("output");
 var outputMessage = document.getElementById("outputMessage");
 var outputData = document.getElementById("outputData");
+var badgesContainer = document.getElementById("badgesContainer");
 
 function drawLine(begin, end, color) {
   canvas.beginPath();
@@ -10214,6 +10215,7 @@ function tick() {
     });
 
     if (code) {
+      // 成功時
       drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
       drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
       drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
@@ -10221,8 +10223,11 @@ function tick() {
       outputMessage.hidden = true;
       outputData.parentElement.hidden = false;
       outputData.innerText = code.data;
+      canvas.hidden = true;
+      badgesContainer.hidden = false;
+      $('#badgesContainer').hide().fadeIn('slow');
     } else {
-      outputMessage.hidden = false;
+      // outputMessage.hidden = false;
       outputData.parentElement.hidden = true;
     }
   }
@@ -10257,7 +10262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61874" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52987" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
